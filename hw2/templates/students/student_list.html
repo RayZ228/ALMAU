@@ -1,0 +1,15 @@
+{% extends "base.html" %}
+
+{% block title %}Список студентов{% endblock %}
+{% block header %}Список студентов{% endblock %}
+
+{% block content %}
+    {% for student in students %}
+        <div class="card">
+            <p><strong>{{ student.name }} {{ student.surname }}</strong></p>
+            <p>Факультет: {{ student.faculty }}</p>
+            <p>Год обучения: {{ student.year_of_study }}</p>
+            <a href="{% url 'student-detail' student.id %}">Подробнее</a>
+        </div>
+    {% endfor %}
+{% endblock %}

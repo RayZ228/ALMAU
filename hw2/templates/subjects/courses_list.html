@@ -1,0 +1,14 @@
+{% extends "base.html" %}
+
+{% block title %}Список курсов{% endblock %}
+{% block header %}Список курсов{% endblock %}
+
+{% block content %}
+    {% for course in courses %}
+        <div class="card">
+            <p><strong>{{ course.title }}</strong></p>
+            <p>Автор: {{ course.author }}</p>
+            <a href="{% url 'course-detail' course.id %}">Подробнее</a>
+        </div>
+    {% endfor %}
+{% endblock %}
