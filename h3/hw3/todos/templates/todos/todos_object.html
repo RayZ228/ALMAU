@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>Todo Object</title>
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        .container {
+            margin-top: 50px;
+        }
+        h1 {
+            margin-bottom: 30px;
+        }
+        .btn {
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>{{ todo.title }}</h1>
+        <p><strong>Description:</strong> {{ todo.description }}</p>
+        <p><strong>Due Date:</strong> {{ todo.due_date }}</p>
+        <p><strong>Status:</strong> {% if todo.status %}Completed{% else %}Not Completed{% endif %}</p>
+        <a class="btn btn-primary" href="{% url 'todo_list' %}">Back to List</a>
+    </div>
+</body>
+</html>
