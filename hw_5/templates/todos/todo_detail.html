@@ -1,0 +1,15 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div class="container">
+    <h2 class="text-center mt-5">{{ todo.title }}</h2>
+    <div class="card shadow p-4">
+        <p><strong>Описание:</strong> {{ todo.description }}</p>
+        <p><strong>Дата выполнения:</strong> {{ todo.due_date }}</p>
+        <p><strong>Статус:</strong> {% if todo.status %}✅ Завершено{% else %}⏳ В процессе{% endif %}</p>
+
+        <a href="{% url 'todo_list' %}" class="btn btn-primary">Назад к списку</a>
+        <a href="{% url 'todo_delete' todo.id %}" class="btn btn-danger">Удалить</a>
+    </div>
+</div>
+{% endblock %}

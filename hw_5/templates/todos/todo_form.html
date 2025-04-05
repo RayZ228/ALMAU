@@ -1,0 +1,35 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div class="container">
+    <h2 class="text-center mt-5">Создать новую задачу</h2>
+    <div class="row justify-content-center">
+        <div class="col-md-6">
+            <form method="post" class="card p-4 shadow">
+                {% csrf_token %}
+
+                <div class="mb-3">
+                    <label class="form-label">Название</label>
+                    {{ form.title }}
+                </div>
+
+                <div class="mb-3">
+                    <label class="form-label">Описание</label>
+                    {{ form.description }}
+                </div>
+
+                <div class="mb-3">
+                    <label class="form-label">Дата выполнения</label>
+                    {{ form.due_date }}
+                </div>
+
+                <div class="mb-3 form-check">
+                    {{ form.status }} <label class="form-check-label">Завершено</label>
+                </div>
+
+                <button type="submit" class="btn btn-success w-100">Сохранить</button>
+            </form>
+        </div>
+    </div>
+</div>
+{% endblock %}
